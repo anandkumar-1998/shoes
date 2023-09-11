@@ -1,9 +1,17 @@
 "";
 import React from "react";
-import { FaFacebook, FaFacebookF, FaGithub, FaGoogle, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {
+  FaFacebook,
+  FaFacebookF,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="container my-5">
+    <div className="container flex my-5">
       <footer className="text-center text-lg text-white bg-[#1c2331]">
         <section className="flex justify-between p-4 bg-[#6351ce] ">
           {/* left */}
@@ -15,10 +23,10 @@ const Footer = () => {
           {/* right */}
           <div className="flex my-2">
             <a href="" className="text-white me-4">
-              <FaFacebookF size={14}/>
+              <FaFacebookF size={14} />
             </a>
             <a href="" className="text-white me-4">
-              <FaTwitter size={14}/>
+              <FaTwitter size={14} />
             </a>
             <a href="" className="text-white me-4">
               <FaGoogle size={14} />
@@ -37,10 +45,12 @@ const Footer = () => {
 
         {/* second section */}
         <section>
-          <div>
-            <div>
-              <div>
-                <h6>Company Name</h6>
+          <div className="container text-center md:text-start mt-5">
+            <div className="flex flex-row mt-3">
+              <div className="md:w-1/4 lg:w-1/3 xl:w-1/4 mx-auto mb-4">
+                <h6 className="uppercase font-bold border-b-2 border-purple-100 inline-block">
+                  Company Name
+                </h6>
                 <p>
                   Here you can use rows and columns to organize your footer
                   content. Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -49,8 +59,10 @@ const Footer = () => {
               </div>
 
               {/* 2nd grid */}
-              <div>
-                <h6>Products</h6>
+              <div className="md:w-1/4 lg:w-1/3 xl:w-1/4 mx-auto mb-4">
+                <h6 className="uppercase font-bold border-b-2 border-purple-100 inline-block">
+                  Products
+                </h6>
                 <p>
                   <a href="#!" className="text-white">
                     MDBootstrap
@@ -75,9 +87,11 @@ const Footer = () => {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="md:w-1/4 lg:w-1/3 xl:w-1/4 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold">Useful links</h6>
+                <h6 className="uppercase font-bold border-b-2 border-purple-100 inline-block">
+                  Useful links
+                </h6>
 
                 <p>
                   <a href="#!" className="text-white">
@@ -103,13 +117,11 @@ const Footer = () => {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="md:w-1/4 lg:w-1/3 xl:w-1/4 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold">Contact</h6>
-                <hr
-                  className="mb-4 mt-0 d-inline-block mx-auto"
-                  // style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
+                <h6 className="uppercase font-bold border-b-2 border-purple-100 inline-block">
+                  Contact
+                </h6>
                 <p>
                   <i className="fas fa-home mr-3"></i> New York, NY 10012, US
                 </p>

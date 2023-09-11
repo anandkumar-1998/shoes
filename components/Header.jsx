@@ -15,8 +15,29 @@ import MobMenu from "./MobMenu";
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
-  const [show, setShow] = useState("translte-y-0");
+  const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  let controlNav = () => {
+    if (window.scrollY > 200) {
+      if(window.scrollY > lastScrollY  && !mobileMenu){
+        setShow("-translate-y-[80px]");
+      }
+      else{
+        setShow('shadow-sm')
+      }
+    } else {
+      setShow("translate-y-0");
+    }
+    setLastScrollY(window.scrollY)
+  };
+  React.useEffect(() => {
+    window.addEventListener("scroll", controlNav);
+    return () => {
+      window.addEventListener("scroll", controlNav);
+    };
+  }, [lastScrollY]);
+
   return (
     <header
       className={`w-full h-[50px] md:h-[80px] bg-white flex items-center 
@@ -36,7 +57,13 @@ const Header = () => {
           setMobileMenu={setMobileMenu}
         />
 
-        <MobMenu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} />
+        {mobileMenu && (
+          <MobMenu
+            showCatMenu={showCatMenu}
+            setShowCatMenu={setShowCatMenu}
+            setMobileMenu={setMobileMenu}
+          />
+        )}
         <div className="flex items-center gap-2 text-black">
           {/* icons start */}
           <div
