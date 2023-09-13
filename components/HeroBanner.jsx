@@ -25,7 +25,7 @@ const responsive = {
 
 const HeroBanner = () => {
   return (
-    <div className="text-white w-full text-center mx-auto my-2">
+    <div className="text-white w-full text-center mx-auto my-2 w-max-[1350px]">
       <Carousel
         responsive={responsive}
         arrows={false}
